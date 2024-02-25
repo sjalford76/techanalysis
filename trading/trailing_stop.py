@@ -14,3 +14,6 @@ class LongTrailingStop(object):
 
     def get_stop(self):
         return self._stop
+    
+    def to_dict(self):
+        return dict(Stop=self._stop, StopDistance=self._stop_distance)

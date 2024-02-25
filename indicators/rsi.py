@@ -1,6 +1,6 @@
 import numpy
 from utils.helpers import nanarray
-import average
+from indicators.average import wilder_average
 
 def rsi( data, n):
         diffs = nanarray(len(data))
@@ -12,8 +12,8 @@ def rsi( data, n):
         up_average = nanarray(len(data))
         down_average = nanarray(len(data))
 
-        up_average = average.wilder_average(ups, n)
-        down_average = average.wilder_average(downs, n)
+        up_average = wilder_average(ups, n)
+        down_average = wilder_average(downs, n)
 
         #Step 7 5/6
         average_up_down = nanarray(len(data))

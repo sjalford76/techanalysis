@@ -1,5 +1,5 @@
 import numpy
-import average
+from indicators.average import wilder_average
 
 def true_range(highs, lows, closes):
     arr = numpy.empty(len(highs))
@@ -14,4 +14,4 @@ def atr(highs, lows, closes, n):
 
     tr = true_range(highs, lows, closes)
 
-    return average.wilder_average(tr, n)
+    return wilder_average(tr, n)
