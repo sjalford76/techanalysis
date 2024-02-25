@@ -1,5 +1,5 @@
 import numpy
-from helpers import nanarray
+from utils.helpers import nanarray
 import average
 
 def rsi( data, n):

@@ -1,5 +1,5 @@
 import numpy
-import helpers
+import utils.helpers as helpers
 
 def rolling_average(srs, n):
     c = numpy.cumsum(srs, dtype=float)
