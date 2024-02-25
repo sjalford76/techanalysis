@@ -1,4 +1,5 @@
 import numpy
+import average
 
 def true_range(highs, lows, closes):
     arr = numpy.empty(len(highs))
@@ -8,3 +9,9 @@ def true_range(highs, lows, closes):
         arr[i] = max( abs(highs[i] - closes[i-1]), abs(lows[i] - closes[i-1] ), highs[i] - lows[i] )
 
     return arr
+
+def atr(highs, lows, closes, n):
+
+    tr = true_range(highs, lows, closes)
+
+    return average.wilder_average(tr, n)
