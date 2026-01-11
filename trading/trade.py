@@ -1,9 +1,10 @@
 
 class Trade(object):
     
-    def __init__(self, date, traded_price, size, stop = None, take_profit = None, expiry = None, exit_price = None, exit_date = None, trade_high=None, trade_low=None):
+    def __init__(self, date, traded_price, size, stop = None, stop_at_inception = None, take_profit = None, expiry = None, exit_price = None, exit_date = None, trade_high=None, trade_low=None):
         self._date = date
         self._traded_price = traded_price
+        self._stop_at_inception = stop_at_inception
         self.size = size
         self._stop = stop
         self._take_profit = take_profit
@@ -25,6 +26,10 @@ class Trade(object):
     def stop(self):
         return self._stop
     
+    @property
+    def stop_at_inception(self):
+        return self._stop_at_inception
+
     @property
     def take_profit(self):
         return self._take_profit
